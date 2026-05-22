@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-bg-dark: #0a0a0f;
+  --color-bg-card: #111118;
+  --color-border: #1e1e2e;
+  --color-neon-green: #39ff14;
+  --color-neon-blue: #00f0ff;
+  --color-neon-purple: #b94fff;
+  --color-neon-pink: #ff2d95;
+  --color-neon-yellow: #ffd700;
+  --color-text-dim: #5a5a6e;
+  --color-text-main: #c8c8d8;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: "Courier New", monospace;
 }
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  25%, 75% { opacity: 0.9; }
+}
+
+.animate-glitch { animation: glitch 0.3s infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s infinite; }
+.animate-flicker { animation: flicker 3s infinite; }
+
+.glass {
+  background: rgba(17, 17, 24, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.neon-border { border: 1px solid var(--color-neon-green); box-shadow: 0 0 8px var(--color-neon-green); }
+.neon-border-blue { border: 1px solid var(--color-neon-blue); box-shadow: 0 0 8px var(--color-neon-blue); }
+.neon-border-purple { border: 1px solid var(--color-neon-purple); box-shadow: 0 0 8px var(--color-neon-purple); }
