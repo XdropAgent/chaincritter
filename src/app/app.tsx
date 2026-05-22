@@ -9,7 +9,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const API_ENDPOINT = 'https://api.pina.my.id/v1/chat/completions';
+const API_ENDPOINT = 'https://token-plan-sgp.xiaomimimo.com/v1/chat/completions';
 const API_KEY = 'sk-10999b3e1c4246aba07b6da2971ab064';
 const API_MODEL = 'mimo-v2.5-pro';
 
